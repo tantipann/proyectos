@@ -1,0 +1,104 @@
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/img/pexels-danny-meneses-340146-943096.jpg");
+    height: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+  h2{
+    text-align: center;
+  }
+
+#habilidades{
+    height: 350px;
+}
+
+#informacion-personal{
+  height: 350px;
+}
+
+
+.card-img-top{
+  height: 15em;
+  transition: transform 0.5s; /* Suaviza la transición */
+}
+
+.card-img-top:hover {
+  transform: scaleX(-1); /* Voltea horizontalmente */
+}
+.card-text{
+  height: 10em;
+}
+
+#img-fluid{
+  color: blue;
+}
+h5{
+  color: blue;
+}
+
+ul {
+  list-style: none;
+}
+
+
+/* Media Queries para diferentes tamaños de pantalla */
+
+/* Pantallas grandes*/
+@media (min-width: 992px) {
+  .col-md-4 {
+      flex: 0 0 33.3333%;
+      max-width: 33.3333%;
+  }
+}
+
+/* Pantallas medianas */
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-md-4 {
+      flex: 0 0 50%;
+      max-width: 50%;
+  }
+
+  
+  .col-md-4:nth-child(3) {
+      flex: 0 0 100%;
+      max-width: 50%;
+  }
+}
+
+/* Pantallas pequeñas*/
+@media (max-width: 767px) {
+  .col-md-4 {
+      flex: 0 0 100%;
+      max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  #contact-container {
+      width: 90%;
+  }
+}
+
+/*Formulario*/
+#contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#contact-container {
+    width: 50%;
+    border-radius: 10px;
+}
+
