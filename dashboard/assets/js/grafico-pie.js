@@ -1,5 +1,5 @@
 async function crearGraficoPie() {
-  const datos = await cargarCSV("/assets/data/datos2.csv");
+  const datos = await cargarCSV("assets/data/datos2.csv");
   const id = "graficoPieNivel1";
   const ctx = document.getElementById(id).getContext("2d");
 
