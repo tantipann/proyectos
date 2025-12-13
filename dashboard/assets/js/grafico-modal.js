@@ -1,7 +1,7 @@
 let graficoModal = null;
 
 async function crearGraficoModal(origen, label, tipo) {
-  const archivo = `/assets/data/${origen}/${label}.csv`;
+  const archivo = `assets/data/${origen}/${label}.csv`;
   const datos = await cargarCSV(archivo);
 
   const canvas = document.getElementById("modal-canvas");
