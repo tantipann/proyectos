@@ -1,5 +1,5 @@
 async function crearGraficoBarra() {
-  const datos = await cargarCSV("/assets/data/datos.csv");
+  const datos = await cargarCSV("assets/data/datos.csv");
   const id = "graficoBarraNivel1";
   const ctx = document.getElementById(id).getContext("2d");
 
