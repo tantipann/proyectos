@@ -21,7 +21,7 @@ footer {
     background-image: linear-gradient(
         rgba(0, 0, 0, 0.5),
         rgba(0, 0, 0, 0.5)
-    ), url("../img/fondo1.png");
+    ), url("../../assets/img/fondo1.png");
 
     height: 50%;
     background-position: center;
