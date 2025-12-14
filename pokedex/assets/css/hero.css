@@ -1,0 +1,29 @@
+.hero {
+  height: 50vh;
+  background: url("../img/hero.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+.hero-overlay {
+  background: rgba(0,0,0,0.6);
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar {
+  background: white;
+  min-height: 100vh;
+  padding: 1rem;
+  box-shadow: 2px 0 10px rgba(0,0,0,.1);
+}
+
+.footer {
+  background: #c62828;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
