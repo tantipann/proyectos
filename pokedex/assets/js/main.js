@@ -52,7 +52,7 @@ function mostrarPokemon(poke) {
     <div class="pokemon-info">
       <div class="nombre-contenedor">
         <p class="pokemon-id">#${pokeId}</p>
-        <h2 class="pokemon-nombre">${poke.name}</h2>
+        <br><h2 class="pokemon-nombre">${poke.name}</h2>
       </div>
 
       <div class="pokemon-tipos">${tipos}</div>
