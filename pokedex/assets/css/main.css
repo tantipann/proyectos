@@ -87,6 +87,8 @@ header {
     box-shadow: 0 0 2rem rgba(0, 0, 0, .25);
 }
 
+
+
 main {
     padding: 2rem;
     max-width: 1000px;
@@ -110,6 +112,7 @@ main {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
+
 
 .pokemon {
     border-radius: 1rem;
@@ -162,10 +165,12 @@ main {
 
 .nombre-contenedor {
     display: flex;
-    align-items: center;
+    /*align-items: center;*/
     column-gap: .5rem;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: column; /* fuerza salto de línea */
+    align-items: flex-start;
 }
 
 .pokemon-id {
@@ -295,4 +300,75 @@ main {
 .fairy {
     background-color: var(--type-fairy);
     color: var(--clr-black);
+}
+
+@media (max-width: 767px) {
+  main {
+    margin-top: 0;
+    padding-top: .75rem;
+  }
+
+  .sidebar {
+    position: static;
+    /*width: 100%;*/
+    z-index: auto;
+    background: white;
+    padding: .75rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,.1);
+    padding-bottom: 0;
+    min-height: 0vh;
+    
+  }
+
+  .sidebar img {
+    display: none;
+  }
+  .sidebar .nav {
+    margin-bottom: 0;
+  }
+
+  .nav-pills .btn-header {
+    font-size: .75rem;
+    padding: .4rem .6rem;
+    white-space: nowrap;
+  }
+
+}
+
+/* === NAV COMO TABS === */
+.nav.nav-pills {
+    border-bottom: 2px solid var(--clr-gray);
+}
+
+.nav.nav-pills .btn-header {
+    border-radius: .5rem .5rem 0 0; /* forma de tab */
+    margin-bottom: -2px;
+    /*background-color: var(--clr-gray);*/
+}
+
+.nav.nav-pills .btn-header:hover {
+    transform: none; /* evita efecto botón */
+}
+
+/* Tab activa (sin JS adicional) */
+.nav.nav-pills .btn-header.active {
+    background-color: var(--clr-white);
+    border-bottom: 2px solid var(--clr-white);
+}
+
+/* Imagen modal responsive */
+.modal-pokemon-img {
+    max-height: 50vh;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Imagen clickeable */
+.pokemon-img {
+    cursor: pointer;
+}
+
+.pokemon-img:hover {
+    transform: scale(1.05);
+    transition: transform .2s ease;
 }

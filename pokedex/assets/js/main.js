@@ -3,6 +3,7 @@ const botonesHeader = document.querySelectorAll(".btn-header");
 
 const URL = "https://pokeapi.co/api/v2/pokemon/";
 let pokemonesCache = [];
+let inicial = 0;
 
 
 async function cargarTodosLosPokemones() {
@@ -16,7 +17,7 @@ async function cargarTodosLosPokemones() {
 
   // Garantizar orden por ID
   data.sort((a, b) => a.id - b.id);
-
+  console.log("Cargando data");
   return data;
 }
 
@@ -72,8 +73,11 @@ function mostrarPokemon(poke) {
 
 
 
-function filtrarPorTipo(tipo) {
+async function filtrarPorTipo(tipo) {
   if (tipo === "ver-todos") {
+    mostrarSpinner();
+    pokemonesCache = await cargarTodosLosPokemones(); // vuelve a la API
+    ocultarSpinner();
     renderPokemones(pokemonesCache);
     return;
   }
@@ -85,13 +89,15 @@ function filtrarPorTipo(tipo) {
   renderPokemones(filtrados);
 }
 
+
+
 function abrirModal(pokemon) {
   document.getElementById("modalTitle").textContent =
     `#${pokemon.id} - ` + pokemon.name.toUpperCase();
 
   document.getElementById("modalBody").innerHTML = `
     <img src="${pokemon.sprites.other["official-artwork"].front_default}"
-         class="img-fluid mb-3">
+     class="img-fluid mb-3 modal-pokemon-img">
     <p><strong>Altura:</strong> ${pokemon.height} m</p>
     <p><strong>Peso:</strong> ${pokemon.weight} kg</p>
   `;
@@ -108,8 +114,26 @@ botonesHeader.forEach((boton) => {
 
 
 document.addEventListener("DOMContentLoaded", async () => {
+  mostrarSpinner();
   pokemonesCache = await cargarTodosLosPokemones();
+  ocultarSpinner();
   renderPokemones(pokemonesCache);
 });
+
+
+function mostrarSpinner() {
+  listaPokemon.innerHTML = `
+    <div class="d-flex justify-content-center align-items-center w-100 py-5">
+      <div class="spinner-border text-danger" role="status">
+        <span class="visually-hidden">Cargando...</span>
+      </div>
+    </div>
+  `;
+}
+
+function ocultarSpinner() {
+  listaPokemon.innerHTML = "";
+}
+
 
 
